@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hugo Pieri — Música Alquímica</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+              body: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              sand: {
+                DEFAULT: '#f5f2ed',
+                dark: '#e8e3dc',
+              },
+              olive: {
+                DEFAULT: '#5a5a40',
+                dark: '#4a4a34',
+              },
+              earth: '#8c7355',
+              charcoal: '#1a1a1a',
+            },
+            animation: {
+              'slow-spin': 'slow-spin 20s linear infinite',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Font & Animation Styles -->
+    <style>
+      body {
+        background-color: #f5f2ed;
+        color: #1a1a1a;
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      .organic-border {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+
+      @keyframes slow-spin {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      
+      .animate-slow-spin {
+        animation: slow-spin 20s linear infinite;
+      }
+
+      .writing-mode-vertical {
+        writing-mode: vertical-rl;
+      }
+
+      /* Native smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Reveal transitions on scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal.reveal-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom button transform */
+      .hover-scale {
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+      .hover-scale:active {
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+  <body class="bg-sand text-charcoal font-body min-h-screen selection:bg-olive/20">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-sand/80 backdrop-blur-md border-b border-olive/5">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between font-sans">
+        <div class="flex flex-col">
+          <span class="font-serif text-xl tracking-widest uppercase">Hugo Pieri</span>
+          <span class="text-[10px] uppercase tracking-[0.3em] text-olive font-bold">Música Alquímica</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+          <a href="#solucoes" class="hover:text-olive transition-colors">Soluções</a>
+          <a href="#experiencia" class="hover:text-olive transition-colors">Experiência</a>
+          <a href="#portfolio" class="hover:text-olive transition-colors">Portfólio</a>
+          <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="text-olive underline underline-offset-8">Contato</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 md:px-12 min-h-screen flex items-center pt-32 lg:pt-20">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Hero Image -->
+        <div class="relative reveal reveal-active">
+          <div class="rounded-[2rem] overflow-hidden lg:mr-10 shadow-2xl relative bg-white">
+            <img 
+              src="https://raw.githubusercontent.com/marinho-hub/gemini-html/7582828d9850a8965f9a7b48928c8ff8e0e12f78/5154808500599852060.jpg" 
+              alt="Infográfico Esteira de Soluções Música Alquímica" 
+              class="w-full h-auto block"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+          <!-- Organic element -->
+          <div class="absolute -bottom-20 -left-10 w-64 h-64 bg-olive/5 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute top-1/2 -right-12 writing-mode-vertical text-[10px] tracking-[1em] uppercase opacity-20 hidden lg:block">
+            Presença • Som • Corpo
+          </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="flex flex-col gap-8 reveal reveal-active">
+          <div>
+            <h2 class="text-olive uppercase tracking-[0.4em] text-[10px] font-bold mb-4">Música Alquímica</h2>
+            <h1 class="text-5xl md:text-8xl font-serif leading-[1.05] mb-8 tracking-tight">
+              A voz como caminho de expressão.
+            </h1>
+            <p class="text-xl text-charcoal/70 max-w-lg leading-relaxed font-body">
+              Experiências vocais que integram corpo, som e escuta. Uma abordagem profunda para destravar sua voz e ganhar confiança no seu potencial criativo.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 mt-4">
+            <a 
+              href="https://wa.me/5531984342925" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 bg-olive text-white shadow-xl hover:bg-olive-dark text-center"
+            >
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Falar no WhatsApp
+            </a>
+            <a 
+              href="#solucoes" 
+              class="px-8 py-4 rounded-full font-medium transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 bg-white text-olive border border-olive/20 hover:border-olive/50 text-center"
+            >
+              Levar essa experiência para meu espaço
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Positioning & Clarity Quotation -->
+    <section class="py-32 px-6 md:px-12 bg-sand-dark/20 text-center">
+      <div class="max-w-4xl mx-auto reveal">
+        <span class="text-olive/40 text-7xl font-serif block mb-8">“</span>
+        <p class="text-2xl md:text-4xl font-serif text-charcoal leading-[1.3] italic px-4">
+          Eu ajudo pessoas a conectar com sua autenticidade e seu potencial criativo através de um trabalho experimental que utiliza a voz e o som para desenvolver o corpo e a presença.
+        </p>
+      </div>
+    </section>
+
+    <!-- Differentiators - Break the Objection -->
+    <section class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-24 reveal">
+        <h2 class="text-4xl md:text-5xl font-serif mb-6">Não é sobre cantar melhor — é sobre se expressar</h2>
+        <p class="text-olive/60 uppercase tracking-widest text-[10px] font-bold">O que torna a Música Alquímica única</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <!-- Diff 1 -->
+        <div class="group text-center reveal">
+          <div class="w-20 h-20 rounded-full mx-auto mb-8 bg-sand-dark flex items-center justify-center text-olive group-hover:bg-olive transition-all duration-500 group-hover:text-white hover-scale shadow-sm">
+            <i data-lucide="mic-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">Não é técnica tradicional</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Esqueça as escalas mecânicas e a busca pela nota perfeita.</p>
+        </div>
+
+        <!-- Diff 2 -->
+        <div class="group text-center reveal">
+          <div class="w-20 h-20 rounded-full mx-auto mb-8 bg-sand-dark flex items-center justify-center text-olive group-hover:bg-olive transition-all duration-500 group-hover:text-white hover-scale shadow-sm">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">Não é coral</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Não buscamos harmonia estética pré-definida, mas sim a sua ressonância.</p>
+        </div>
+
+        <!-- Diff 3 -->
+        <div class="group text-center reveal">
+          <div class="w-20 h-20 rounded-full mx-auto mb-8 bg-sand-dark flex items-center justify-center text-olive group-hover:bg-olive transition-all duration-500 group-hover:text-white hover-scale shadow-sm">
+            <i data-lucide="music" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">Não é sobre performance</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">O palco aqui é o seu corpo. O foco é a sua própria percepção interna.</p>
+        </div>
+
+        <!-- Diff 4 -->
+        <div class="group text-center reveal">
+          <div class="w-20 h-20 rounded-full mx-auto mb-8 bg-sand-dark flex items-center justify-center text-olive group-hover:bg-olive transition-all duration-500 group-hover:text-white hover-scale shadow-sm">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl mb-4">É sobre presença</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">A voz é a ferramenta para habitar o agora com totalidade e entrega.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions / Esteira -->
+    <section id="solucoes" class="py-32 px-6 md:px-12 bg-sand-dark/10 rounded-[4rem] mx-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 text-center max-w-2xl mx-auto reveal">
+          <h2 class="text-5xl font-serif mb-6">Esteira de Soluções</h2>
+          <p class="text-charcoal/50 font-body mb-12">Um fluxo pensado para sua evolução, desde a primeira experiência até o aprofundamento individual.</p>
+          
+          <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20">
+            <img 
+              src="https://raw.githubusercontent.com/marinho-hub/gemini-html/7582828d9850a8965f9a7b48928c8ff8e0e12f78/5154808500599852058.jpg" 
+              alt="Hugo Pieri - Imagem de Transição" 
+              class="w-full h-auto"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Solution Card 1 -->
+          <div class="reveal bg-white p-8 rounded-3xl border border-white/40 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-olive/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-700"></div>
+            <div class="flex justify-between items-start mb-8 relative z-10">
+              <div class="p-4 bg-sand rounded-2xl text-olive">
+                <i data-lucide="users" class="w-8 h-8"></i>
+              </div>
+              <span class="text-[10px] font-bold tracking-widest text-olive bg-sand px-3 py-1 rounded-full uppercase">Recorrência</span>
+            </div>
+            <h3 class="text-3xl font-serif mb-4">Lab Vocal (Mensal)</h3>
+            <p class="text-charcoal/60 mb-8 flex-grow leading-relaxed">Prática semanal para soltar o corpo, liberar a voz e ganhar confiança ao se expressar.</p>
+            <div class="space-y-4 mb-10 text-sm">
+              <div class="flex items-center gap-3 text-charcoal/70"><div class="w-2 h-2 rounded-full bg-olive"></div> 1 encontro por semana (1h30 a 2h)</div>
+              <div class="flex items-center gap-3 text-charcoal/70"><div class="w-2 h-2 rounded-full bg-olive"></div> Evolução natural da voz</div>
+              <div class="flex justify-between font-bold text-olive mt-4 pt-4 border-t border-olive/5"><span>Mensalidade</span> <span>R$ 297/mês</span></div>
+            </div>
+            <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="hover-scale w-full px-8 py-4 rounded-full font-medium transition-all text-center bg-olive text-white shadow-xl hover:bg-olive-dark">
+              Garantir minha vaga
+            </a>
+          </div>
+
+          <!-- Solution Card 2 -->
+          <div class="reveal bg-charcoal p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full text-white border-none group">
+            <div class="flex justify-between items-start mb-8">
+              <div class="p-4 bg-white/10 rounded-2xl text-sand">
+                <i data-lucide="globe" class="w-8 h-8"></i>
+              </div>
+              <span class="text-[10px] font-bold tracking-widest text-sand/50 bg-white/5 px-3 py-1 rounded-full uppercase">Imersão</span>
+            </div>
+            <h3 class="text-3xl font-serif mb-4">Lab Vocal Intensivo</h3>
+            <p class="text-white/60 mb-8 flex-grow leading-relaxed">Imersão de 2 a 3 dias para quem busca uma experiência profunda e desbloqueio vocal acelerado.</p>
+            <div class="space-y-4 mb-10 text-sm">
+               <div class="flex items-center gap-3 text-white/50"><div class="w-2 h-2 rounded-full bg-sand"></div> Experiência profunda</div>
+               <div class="flex items-center gap-3 text-white/50"><div class="w-2 h-2 rounded-full bg-sand"></div> Gerar conexão e intensidade</div>
+               <div class="flex justify-between font-bold text-sand mt-4 pt-4 border-t border-white/5"><span>Investimento</span> <span>R$ 497</span></div>
+            </div>
+            <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="hover-scale w-full px-8 py-4 rounded-full font-medium transition-all text-center bg-white text-charcoal shadow-xl">
+              Ver próximas datas
+            </a>
+          </div>
+
+          <!-- Solution Card 3 -->
+          <div class="reveal bg-white p-8 rounded-3xl border border-white/40 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div class="flex justify-between items-start mb-8">
+              <div class="p-4 bg-sand rounded-2xl text-olive">
+                <i data-lucide="mic-2" class="w-8 h-8"></i>
+              </div>
+              <span class="text-[10px] font-bold tracking-widest text-olive bg-sand px-3 py-1 rounded-full uppercase">Individual</span>
+            </div>
+            <h3 class="text-3xl font-serif mb-4">Aulas Particulares</h3>
+            <p class="text-charcoal/60 mb-8 flex-grow leading-relaxed">Foco total no seu desenvolvimento individual, com acompanhamento personalizado para suas metas vocais.</p>
+            <div class="p-6 bg-sand rounded-2xl mb-8">
+               <div class="flex justify-between text-sm mb-2 opacity-60"><span>Sessão avulsa</span> <span>R$ 160</span></div>
+               <div class="flex justify-between text-lg font-serif"><span>Pacote 5 aulas</span> <span>R$ 700</span></div>
+            </div>
+            <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="hover-scale w-full px-8 py-4 rounded-full font-medium transition-all text-center bg-white text-olive border border-olive/20 hover:border-olive/50">
+              Consultar agenda
+            </a>
+          </div>
+
+          <!-- Solution Card 4 -->
+          <div class="reveal bg-transparent p-8 rounded-3xl border-2 border-olive shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div class="flex justify-between items-start mb-8">
+              <div class="p-4 bg-olive text-white rounded-2xl">
+                <i data-lucide="award" class="w-8 h-8"></i>
+              </div>
+              <span class="text-[10px] font-bold tracking-widest text-olive uppercase">B2B</span>
+            </div>
+            <h3 class="text-3xl font-serif mb-4">Experiência para Empresas</h3>
+            <p class="text-charcoal/60 mb-8 flex-grow leading-relaxed">Treinamento de comunicação, escuta ativa e integração de grupos através da vivência vocal.</p>
+            <div class="space-y-4 mb-10 text-sm">
+               <div class="flex items-center gap-3 text-charcoal/70"><div class="w-2 h-2 rounded-full bg-olive"></div> Redução de tension e estresse</div>
+               <div class="flex items-center gap-3 text-charcoal/70"><div class="w-2 h-2 rounded-full bg-olive"></div> Fortalecimento da cultura de time</div>
+            </div>
+            <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="hover-scale w-full px-8 py-4 rounded-full font-medium transition-all text-center bg-olive text-white shadow-xl hover:bg-olive-dark">
+              Solicitar proposta
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Bio -->
+    <section id="experiencia" class="py-40 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+        <!-- Content -->
+        <div class="order-2 lg:order-1 reveal">
+          <h2 class="text-5xl font-serif mb-12 italic leading-tight">Hugo Pieri: Músico, cantor e pesquisador.</h2>
+          <div class="space-y-8 text-lg font-body text-charcoal/80 leading-relaxed">
+            <p>
+              Barítono nascido em Belo Horizonte, com formação em <span class="text-olive font-bold">Regência pela UFMG</span> e especialização em canto barroco na Europa.
+            </p>
+            <p>
+              Com passagens pela França e Alemanha, obteve o Mestrado em Performance em Canto na Música Antiga pela Escola Superior de Música em Trossingen. Atua como solista e coralista em grupos internacionais como Schola Stralsundensis e Los Biganos.
+            </p>
+            <p>
+              Mas foi no contraste entre o ensino técnico e a experiência humana que nasceu a <span class="italic font-serif">Música Alquímica</span> — uma abordagem que integra corpo, som e presença para uma expressão autêntica.
+            </p>
+          </div>
+          
+          <div class="mt-16 flex items-center gap-6">
+             <div class="text-center">
+                <span class="text-4xl font-serif block mb-1">Mestre</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40">Em Performance</span>
+             </div>
+             <div class="w-px h-12 bg-charcoal/10"></div>
+             <div class="text-center">
+                <span class="text-4xl font-serif block mb-1">BH • EU • AUS</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40">Formação Global</span>
+             </div>
+          </div>
+        </div>
+        
+        <!-- Rotating Profile Frame -->
+        <div class="order-1 lg:order-2 relative reveal">
+           <div class="organic-border overflow-hidden aspect-square shadow-2xl relative z-10 w-full">
+              <img 
+                src="https://raw.githubusercontent.com/marinho-hub/gemini-html/7582828d9850a8965f9a7b48928c8ff8e0e12f78/5154808500599852063.jpg" 
+                alt="Hugo Pieri - Side Profile Artistic" 
+                class="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+           </div>
+           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-olive/10 rounded-full animate-slow-spin"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Proof / Portfolio -->
+    <section id="portfolio" class="py-40 border-t border-olive/5 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-5xl font-serif mb-4 tracking-tight">Presença & Som</h2>
+          <p class="text-[10px] uppercase tracking-[0.5em] font-bold text-olive">Alguns registros da jornada</p>
+        </div>
+
+        <div class="max-w-md mx-auto relative reveal">
+           <!-- Top Icons -->
+           <div class="flex justify-between mb-10 px-4">
+              <!-- Item 1 -->
+              <a href="https://share.google/aFAyqXMGXKHCpMKwF" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 group hover-scale">
+                <div class="w-12 h-12 rounded-full bg-sand-dark/30 flex items-center justify-center text-olive group-hover:bg-olive group-hover:text-white transition-all duration-300 shadow-sm">
+                  <i data-lucide="play" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-olive/60 group-hover:text-olive transition-colors text-center max-w-[102px]">
+                  Anima Música
+                </span>
+              </a>
+              
+              <!-- Item 2 -->
+              <a href="https://drive.google/drive/folders/1jTjIvMHTsCsQVMJqDyPVzDlLbYcLLU2X" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 group hover-scale">
+                <div class="w-12 h-12 rounded-full bg-sand-dark/30 flex items-center justify-center text-olive group-hover:bg-olive group-hover:text-white transition-all duration-300 shadow-sm">
+                  <i data-lucide="camera" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-olive/60 group-hover:text-olive transition-colors text-center max-w-[102px]">
+                  Boronia Beach
+                </span>
+              </a>
+           </div>
+
+           <!-- Central Portrait Flyer -->
+           <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/40 z-10 relative">
+              <img 
+                src="https://raw.githubusercontent.com/marinho-hub/gemini-html/7582828d9850a8965f9a7b48928c8ff8e0e12f78/5154808500599852061.jpg" 
+                alt="Lab Vocal Flyer - Hugo Pieri" 
+                class="w-full h-auto" 
+                referrerPolicy="no-referrer" 
+              />
+           </div>
+
+           <!-- Bottom Icons -->
+           <div class="flex justify-between mt-10 px-4">
+              <!-- Item 3 -->
+              <a href="https://share.google/9IpbYvSbrVSGJmZQO" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 group hover-scale">
+                <div class="w-12 h-12 rounded-full bg-sand-dark/30 flex items-center justify-center text-olive group-hover:bg-olive group-hover:text-white transition-all duration-300 shadow-sm">
+                  <i data-lucide="headphones" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-olive/60 group-hover:text-olive transition-colors text-center max-w-[102px]">
+                  Serena
+                </span>
+              </a>
+              
+              <!-- Item 4 -->
+              <a href="https://drive.google/drive/folders/1txPjh9zRxVRgtprLk_L8T7yExGCTnfRx" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 group hover-scale">
+                <div class="w-12 h-12 rounded-full bg-sand-dark/30 flex items-center justify-center text-olive group-hover:bg-olive group-hover:text-white transition-all duration-300 shadow-sm">
+                  <i data-lucide="music" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-olive/60 group-hover:text-olive transition-colors text-center max-w-[102px]">
+                  Lamento de Mateus
+                </span>
+              </a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Final Section -->
+    <section class="py-0 mb-20 px-6 md:px-12 max-w-7xl mx-auto">
+       <div class="reveal bg-olive rounded-[4rem] p-8 md:p-24 text-center text-white relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent pointer-events-none"></div>
+          
+          <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/20 relative z-10 shadow-2xl">
+             <img 
+               src="https://raw.githubusercontent.com/marinho-hub/gemini-html/7582828d9850a8965f9a7b48928c8ff8e0e12f78/5154808500599852060.jpg" 
+               alt="Hugo Pieri - Soluções" 
+               class="w-full h-full object-cover" 
+               referrerpolicy="no-referrer" 
+             />
+          </div>
+
+          <div class="flex-grow text-left relative z-10">
+            <h2 class="text-3xl md:text-5xl font-serif mb-6 leading-tight">
+              Leve a experiência da voz para seu grupo, espaço ou empresa.
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4">
+               <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="hover-scale bg-sand text-olive py-4 px-10 rounded-full font-medium shadow-lg hover:bg-sand-dark text-center">
+                  Falar no WhatsApp
+               </a>
+               <a href="mailto:oipieri@gmail.com" class="hover-scale bg-transparent border border-white/30 text-white py-4 px-10 rounded-full font-medium hover:border-white text-center">
+                  Solicitar Proposta
+               </a>
+            </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-olive/5 bg-white md:px-12">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+        <!-- Col 1 -->
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col">
+            <span class="font-serif text-3xl tracking-widest uppercase">Música Alquímica</span>
+            <span class="text-[10px] uppercase tracking-[0.3em] font-medium opacity-40">Por Hugo Pieri</span>
+          </div>
+        </div>
+        
+        <!-- Col 2 -->
+        <div class="flex flex-col gap-4">
+          <span class="text-[10px] uppercase font-bold tracking-widest opacity-30 font-sans">Navegação</span>
+          <div class="flex flex-col gap-2 text-sm font-sans">
+            <a href="#solucoes" class="hover:text-olive transition-colors underline-offset-4 hover:underline font-bold">Soluções</a>
+            <a href="#experiencia" class="hover:text-olive transition-colors underline-offset-4 hover:underline font-bold">Experiência</a>
+            <a href="#portfolio" class="hover:text-olive transition-colors underline-offset-4 hover:underline font-bold">Portfólio</a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="flex flex-col gap-4">
+           <span class="text-[10px] uppercase font-bold tracking-widest opacity-30 font-sans">Conecte-se</span>
+           <div class="flex justify-center md:justify-start gap-6">
+              <a href="https://instagram.com/hugopieri" target="_blank" rel="noopener noreferrer" class="text-olive hover:opacity-70 transition-opacity">
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+              </a>
+              <a href="https://wa.me/5531984342925" target="_blank" rel="noopener noreferrer" class="text-olive hover:opacity-70 transition-opacity">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+              </a>
+              <a href="mailto:oipieri@gmail.com" class="text-olive hover:opacity-70 transition-opacity">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </a>
+           </div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-olive/5 text-center">
+         <p class="text-[10px] uppercase tracking-[0.4em] opacity-20">© 2026 Hugo Pieri. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a 
+      href="https://wa.me/5531984342925"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover-scale fixed bottom-10 right-10 z-[100] bg-[#25D366] text-white p-5 rounded-full shadow-2xl hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all flex items-center justify-center"
+    >
+      <i data-lucide="message-circle" class="w-8 h-8"></i>
+      <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
+    </a>
+
+    <!-- Lucide Icons Library Injection & Scroll Reveal Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Simple, smooth Scroll Reveal animation engine
+      document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+          const windowHeight = window.innerHeight;
+          reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 100; // Trigger threshold
+            if (elementTop < windowHeight - elementVisible) {
+              el.classList.add('reveal-active');
+            }
+          });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check
+        revealOnScroll();
+      });
+    </script>
+  </body>
+</html>
